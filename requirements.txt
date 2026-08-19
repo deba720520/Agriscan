@@ -1,0 +1,8 @@
+streamlit>=1.35
+numpy
+pandas
+Pillow
+matplotlib
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+transformers
