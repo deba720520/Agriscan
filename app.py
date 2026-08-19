@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from PIL import Image
+import matplotlib
 import matplotlib.cm as cm
 from transformers import pipeline as hf_pipeline
 
@@ -144,7 +145,7 @@ def severity_grade(norm_index):
 
 
 def heatmap_overlay(norm_index):
-    cmap = cm.get_cmap("RdYlGn")
+    cmap = matplotlib.colormaps["RdYlGn"]
     colored = cmap(norm_index)[:, :, :3]
     colored = (colored * 255).astype(np.uint8)
     return Image.fromarray(colored, "RGB")
